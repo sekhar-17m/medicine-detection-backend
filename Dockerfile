@@ -1,14 +1,14 @@
-# Use OpenJDK 17 base image
-FROM openjdk:17-jdk-slim
+# Use a valid Java 17 base image
+FROM eclipse-temurin:17-jdk
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
 # Copy the built JAR file into the container
-COPY target/medicine-detection-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY target/*.jar app.jar
 
-# Expose the port (Render will map $PORT automatically)
+# Expose the port (Render uses $PORT)
 EXPOSE 8080
 
-# Run the Spring Boot app
+# Run the app
 CMD ["java", "-jar", "app.jar"]
