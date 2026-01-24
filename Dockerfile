@@ -1,15 +1,14 @@
-# Use a valid Java 17 base image
+# Use Java 17 base image
 FROM eclipse-temurin:17-jdk
 
 # Set working directory
 WORKDIR /app
 
-# Copy the built JAR file into the container
+# Copy your prebuilt JAR
 COPY target/medicine-backend-1.0.0.jar app.jar
 
-
-# Expose the port (Render uses $PORT)
+# Expose port
 EXPOSE 8080
 
 # Run the app
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
