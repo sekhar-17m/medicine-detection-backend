@@ -5,7 +5,8 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Copy the built JAR file into the container
-COPY target/*.jar app.jar
+COPY target/medicine-backend-1.0.0.jar app.jar
+
 
 # Expose the port (Render uses $PORT)
 EXPOSE 8080
