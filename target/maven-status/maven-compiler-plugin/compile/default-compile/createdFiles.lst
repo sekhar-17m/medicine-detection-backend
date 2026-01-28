@@ -1,3 +1,4 @@
+com\medicinedetection\controller\PingController.class
 com\medicinedetection\controller\MedicineController.class
 com\medicinedetection\MedicineBackendApplication.class
 com\medicinedetection\repository\MedicineRepository.class
