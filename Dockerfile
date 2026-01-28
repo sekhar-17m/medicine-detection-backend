@@ -5,7 +5,7 @@ WORKDIR /app
 # Copy everything including Maven wrapper
 COPY . .
 
-# Make mvnw executable
+# Make Maven wrapper executable
 RUN chmod +x mvnw
 
 # Build the Spring Boot fat JAR
