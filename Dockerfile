@@ -13,5 +13,5 @@ RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
-# Run the fat JAR created by Spring Boot plugin
+# Run the fat JAR
 CMD ["java", "-jar", "target/medicine-backend-1.0.0.jar"]
