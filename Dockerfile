@@ -1,14 +1,14 @@
-# Use Java 17 base image
 FROM eclipse-temurin:17-jdk
 
-# Set working directory
 WORKDIR /app
 
-# Copy your prebuilt JAR
-COPY target/medicine-backend-1.0.0.jar app.jar
+# Copy everything including Maven wrapper
+COPY . .
 
-# Expose port
+# Build the Spring Boot fat JAR
+RUN ./mvnw clean package -DskipTests
+
 EXPOSE 8080
 
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the fat JAR created by Spring Boot plugin
+CMD ["java", "-jar", "target/medicine-backend-1.0.0.jar"]
